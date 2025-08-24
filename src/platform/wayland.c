@@ -298,7 +298,8 @@ void draw_bar(void) {
         return;
     }
 
-    int effective_opacity = fullscreen_detected ? 0 : current_config->overlay_opacity;
+    bool hide_for_fullscreen = fullscreen_detected && !current_config->visible_in_fullscreen;
+    int effective_opacity = hide_for_fullscreen ? 0 : current_config->overlay_opacity;
     
     // Clear buffer with transparency
     for (int i = 0; i < current_config->screen_width * current_config->bar_height * 4; i += 4) {
@@ -309,7 +310,7 @@ void draw_bar(void) {
     }
 
     // Draw cat if visible
-    if (!fullscreen_detected) {
+    if (!hide_for_fullscreen) {
         pthread_mutex_lock(&anim_lock);
         int cat_height = current_config->cat_height;
         int cat_width = (cat_height * CAT_IMAGE_WIDTH) / CAT_IMAGE_HEIGHT;

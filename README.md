@@ -138,6 +138,7 @@ mirror_x=0                       # Flip horizontally (mirror across Y axis)
 mirror_y=0                       # Flip vertically (mirror across X axis)
 overlay_opacity=150              # Background opacity (0-255)
 overlay_position=top             # Position on screen (top/bottom) # Note: hot-reload does not work for this option, requires a restart
+visible_in_fullscreen=0          # Keep overlay visible when an app is fullscreen (0=hide, 1=show)
 
 # Animation settings
 fps=60                           # Frame rate (1-120)
@@ -164,6 +165,7 @@ enable_debug=1                   # Show debug messages
 | `overlay_opacity`         | Integer | 0-255             | 150                 | Background opacity (0=transparent)            |
 | `mirror_x`                | Boolean | 0 or 1            | 0                   | Flip cat horizontally (mirror across Y axis)  |
 | `mirror_y`                | Boolean | 0 or 1            | 0                   | Flip cat vertically (mirror across X axis)    |
+| `visible_in_fullscreen`   | Boolean | 0 or 1            | 0                   | Keep overlay visible during fullscreen        |
 | `overlay_position`        | String  | "top" or "bottom" | "top"               | Position of overlay on screen                 |
 | `fps`                     | Integer | 1-120             | 60                  | Animation frame rate                          |
 | `keypress_duration`       | Integer | 50-5000           | 100                 | Animation duration after keypress (ms)        |
